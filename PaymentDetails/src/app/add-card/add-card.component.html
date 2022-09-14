@@ -1,0 +1,57 @@
+<div>
+    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Success!</strong> your data has been added Successfully
+        <button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+    </div>
+    <h3 class="text-center text-capitalize">Add Card Details</h3>
+    <div class=" mx-auto">
+        <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="name">Enter your name</label>
+                <input type="text" class="form-control" id="username" autocomplete="off"
+                    placeholder="Enter your full name" formControlName="username" maxlength="30" />
+
+                <small class="text-danger"
+                    *ngIf="!myReactiveForm.get('username').valid && myReactiveForm.get('username').touched">Please
+                    enter valid name </small>
+            </div>
+
+            <div class="form-group">
+                <label for="cardnumber">Cardnumber</label>
+                <input type="text" class="form-control" id="cardnumber" autocomplete="off"
+                    formControlName="cardnumber" placeholder="16 Digits Card Number" />
+
+                <small class="text-danger"
+                    *ngIf="!myReactiveForm.get('cardnumber')?.valid && myReactiveForm.get('cardnumber')?.touched">Please
+                    enter valid card number </small>
+
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="securitycode">CVV</label>
+                        <input type="password" class="form-control" id="securitycode" formControlName="securitycode" placeholder="3 Digits CVV" />
+                        <small class="text-danger"
+                    *ngIf="!myReactiveForm.get('securitycode')?.valid && myReactiveForm.get('securitycode')?.touched">Please
+                    enter valid CVV number </small>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="date">Valid Through</label>
+                        <input type="text" class="form-control" id="date" autocomplete="off"
+                             formControlName="date" placeholder="MM/YY" />
+                        <small class="text-danger"
+                            *ngIf="!myReactiveForm.get('date')?.valid && myReactiveForm.get('date')?.touched">Please
+                            Enter Valid Date</small>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- <input mbsc-input id="picker" type="date" placeholder="Required" value="12/2025" /> -->
+            <button type="submit" class="btn btn-primary" style="width: 100%;" [disabled]="!myReactiveForm.valid">Submit</button>
+        </form>
+    </div>
+</div>

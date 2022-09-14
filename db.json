@@ -1,0 +1,25 @@
+{
+  "PaymentDetails": [
+    {
+      "username": "Deepak",
+      "date": "12/27",
+      "securitycode": "123",
+      "cardnumber": "1234567890123456",
+      "id": 6
+    },
+    {
+      "username": "Kevin",
+      "date": "12/26",
+      "securitycode": "546",
+      "cardnumber": "1212121212121212",
+      "id": 8
+    },
+    {
+      "username": "Kiran",
+      "date": "2022-10-09",
+      "securitycode": "111",
+      "cardnumber": "1111111111111111",
+      "id": 9
+    }
+  ]
+}
