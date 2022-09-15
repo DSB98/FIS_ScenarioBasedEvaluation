@@ -18,9 +18,11 @@
                     <td scope="row">{{PaymentDetails.username}}</td>
                     <td scope="row">{{PaymentDetails.cardnumber}}</td>
                     <td scope="row">{{PaymentDetails.date}}</td>
-                    <td scope="row"><i (click)="deleteCard(PaymentDetails.id)" class="fa fa-trash"
-                            style="font-size:20px;color:red;">
-                        </i>
+                    <td scope="row">
+                        <a><i (click)="deleteCard(PaymentDetails.id)" class="fa fa-trash"
+                                style="font-size:20px;color:red;">
+                            </i>
+                        </a>
                         <a routerLink="/UpdateCard/{{PaymentDetails.id}}">
                             <i class="fa fa-edit px-3" style="font-size:20px;color:blue;"></i>
                         </a>
@@ -29,13 +31,10 @@
                         </a> -->
                         <!-- <button data-toggle="modal" data-target="#cardmodal">test</button> -->
                     </td>
-                   
+
 
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
-
-
-

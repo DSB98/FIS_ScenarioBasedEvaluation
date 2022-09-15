@@ -18,11 +18,14 @@ export class ViewCardComponent implements OnInit {
     })
   }
   deleteCard(id:any) {
-    //Note : This data we have delete it from collection array also.
     this.collection.splice(id , 1)
+    
     this.cardservice.DeleteCard(id).subscribe((result) => {
       console.warn(result)
+     
     })
+    window.location.reload()
+   
   }
 
 }

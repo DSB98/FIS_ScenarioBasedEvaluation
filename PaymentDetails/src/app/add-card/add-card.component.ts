@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { CardServiceService } from '../card-service.service';
+import { ViewCardComponent } from '../view-card/view-card.component';
 @Component({
   selector: 'app-add-card',
   templateUrl: './add-card.component.html',
@@ -24,7 +25,9 @@ export class AddCardComponent implements OnInit {
       
       // 'date': new FormControl(null, [Validators.required, Validators.pattern('^[0-1]{1}[1-9]{1}[/]{1}20((09)|([1-5][0-9]))')]),
 
-      'date': new FormControl(null, [Validators.required, Validators.pattern('^[0-9]{2}[/]{1}[22-99]{2}$')]),
+      // 'date': new FormControl(null, [Validators.required, Validators.pattern('^[0-9]{2}[/]{1}[22-99]{2}$')]),
+      'date': new FormControl(null, [Validators.required, Validators.pattern('^(0[1-9]|1[0-2])\/?[0-9]{2}$')]),
+
       'securitycode':new FormControl(null, [Validators.required,Validators.pattern('^[0-9]{3}$')]),
       'cardnumber': new FormControl(null, [Validators.required,Validators.pattern('^[0-9]{16}$')]),
       
@@ -35,7 +38,9 @@ export class AddCardComponent implements OnInit {
     this.cardservice.postCard(this.myReactiveForm.value).subscribe((result) => {
       
       this.alert = true
+
       this.myReactiveForm.reset({})
+      window.location.reload()
     })
     
 

@@ -48,3 +48,7 @@ table tr:hover{
     text-align: right;
     font-size: medium;
 }
+
+table a i:hover{
+    cursor: pointer;
+}
